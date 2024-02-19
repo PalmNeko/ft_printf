@@ -1,9 +1,11 @@
 
-includes
 *.o
 *.out
 *.a
 *.d
-bonus
 *.bak
+*.log
+includes
+bonus
 printfTester/
+test

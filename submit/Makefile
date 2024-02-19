@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/02/12 16:29:35 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/02/19 18:10:28 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,10 +85,6 @@ INC_DIRS = \
 
 CFLAGS += $(addprefix -I, $(INC_DIRS))
 
-ifeq ($(MAKECMDGOALS), debug)
-	CFLAGS += -g -fsanitize=address
-endif
-
 # all
 all: $(NAME)
 
@@ -109,12 +105,6 @@ $(NAME_BONUS): $(LIBFT) $(OBJS_BONUS)
 
 $(LIBFT):
 	$(MAKE) --directory Libft
-
-# .PHONY rules
-
-debug: $(NAME)
-
-build: $(NAME) clean
 
 update_bonus:
 	mkdir -p bonus_files
@@ -152,12 +142,24 @@ clean:
 	$(RM) $(OBJS_BONUS) $(DEPENDS_BONUS)
 	$(RM) *.bak
 	$(RM) **/*.bak
+	$(RM) printf.log
+	$(RM) ft_printf.log
+	$(RM) main.d test.d
 
 fclean: clean
 	$(MAKE) --directory Libft fclean
 	$(RM) $(NAME)
 	$(RM) $(NAME_BONUS)
+	$(RM) test
+
+test: $(NAME) main.c
+	$(CC) $(CFLAGS) $^ -o $@
+
+check: test
+	./test printf | cat -e > printf.log
+	./test ft_printf | cat -e > ft_printf.log
+	diff printf.log ft_printf.log
 
 re: fclean all
 
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean check re

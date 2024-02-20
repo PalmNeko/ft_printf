@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/02/20 13:10:24 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/02/20 13:17:26 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,6 @@ LIBFT = Libft/libft.a
 CC = cc
 CFLAGS += -Wall -Werror -Wextra
 SRCS += \
-	./aligned_print/left_aligned_print.c \
-	./aligned_print/left_aligned_print_char.c \
-	./aligned_print/right_aligned_print.c \
-	./aligned_print/right_aligned_print_char.c \
 	./aligned_print/t_conv_aligned_print.c \
 	./aligned_print/t_conv_aligned_print_char.c \
 	./conversion_specification/check_conv_specification_format.c \

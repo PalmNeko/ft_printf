@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/02/20 18:22:35 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/02/20 18:24:37 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,6 +138,8 @@ clean:
 	$(RM) $(OBJS_BONUS) $(DEPENDS_BONUS)
 	$(RM) *.bak
 	$(RM) **/*.bak
+	$(RM) *.log
+	$(RM) **/*.log
 	$(RM) printf.log
 	$(RM) ft_printf.log
 	$(RM) main.d test.d

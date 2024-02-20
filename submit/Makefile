@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/02/20 13:17:26 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/02/20 14:41:55 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -170,6 +170,9 @@ submit:
 	rm -rf .git
 	@ echo "\033[32msucceeded\033[m"
 
+clone_printfTester:
+	git clone https://github.com/Tripouille/printfTester.git
+
 re: fclean all
 
-.PHONY: all clean fclean check submit re
+.PHONY: all clean fclean check submit clone_printfTester re

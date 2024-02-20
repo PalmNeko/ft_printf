@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:43:19 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/02/12 12:31:00 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:14:21 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,18 @@ static char	*gen_zero_pad_num_str(char *num_str, int min_num_len);
 
 char	*zero_pad_with_cs(t_cs *cs, char *num_str)
 {
-	int		pad_zero_min_width;
+	int			pad_zero_min_width;
+	t_cs		backup;
+	bool		is_cs_x;
+	const int	prefix_len = 2;
 
+	backup = *cs;
+	is_cs_x = (cs->conversion_specifier == CS_UPPER_X
+			|| cs->conversion_specifier == CS_LOWER_X);
+	if (is_cs_x && cs->minimum_field_width == true)
+		cs->minimum_field_width -= prefix_len;
+	if (cs->minimum_field_width < 0)
+		cs->minimum_field_width = 0;
 	pad_zero_min_width = 0;
 	if (cs->is_specified_precision == true)
 		pad_zero_min_width = cs->precision;
@@ -31,7 +41,9 @@ char	*zero_pad_with_cs(t_cs *cs, char *num_str)
 		pad_zero_min_width = cs->minimum_field_width;
 	if (num_str[0] == '-' && cs->is_specified_precision != true)
 		pad_zero_min_width -= 1;
-	return (gen_zero_pad_num_str(num_str, pad_zero_min_width));
+	*cs = backup;
+	num_str = gen_zero_pad_num_str(num_str, pad_zero_min_width);
+	return (num_str);
 }
 
 static char	*gen_zero_pad_num_str(char *num_str, int min_num_len)

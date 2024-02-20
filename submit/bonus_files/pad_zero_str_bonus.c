@@ -3,16 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   pad_zero_str_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tookuyam <tookuyam@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:50:40 by tookuyam          #+#    #+#             */
-/*   Updated: 2023/11/08 16:05:15 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/02/20 13:26:47 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
+/**
+ * prepend '0' to be min_len length.
+ * @return string allocated to memory. needs free(3) for prevent leaks.
+ * ex. str: "123" min_len: 5 => "00123"
+ * ex. str: "123" min_len: 3 => "123"
+ */
 char	*pad_zero_str(char *str, int min_len)
 {
 	size_t	len;

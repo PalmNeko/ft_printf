@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 14:46:38 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/02/11 16:40:21 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:40:42 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ char	*generate_ul_hex_with_cs(t_cs *cs, unsigned long value)
 		num_str = ft_ultoa_base_str(value, "0123456789abcdef");
 	if (num_str == NULL)
 		return (NULL);
-	tmp = set_prefix_with_cs(cs, num_str);
+	tmp = zero_pad_with_cs(cs, num_str);
 	free(num_str);
 	if (tmp == NULL)
 		return (NULL);
 	num_str = tmp;
-	tmp = zero_pad_with_cs(cs, num_str);
+	tmp = set_prefix_with_cs(cs, num_str);
 	free(num_str);
 	if (tmp == NULL)
 		return (NULL);

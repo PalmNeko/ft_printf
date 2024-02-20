@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/02/20 12:48:50 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/02/20 13:10:24 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,16 +160,20 @@ check: test
 	./test ft_printf | cat -e > ft_printf.log
 	diff printf.log ft_printf.log
 
-DEPLOY_REPO=git@vogsphere-v2.42tokyo.jp:vogsphere/intra-uuid-fc6c767f-f126-4087-9c2f-460ed6ac803e-5512429-tookuyam
-deploy:
+SUBMIT_REPO=git@vogsphere-v2.42tokyo.jp:vogsphere/intra-uuid-fc6c767f-f126-4087-9c2f-460ed6ac803e-5512429-tookuyam
+submit:
+	@ echo "\033[35mgenerate tmp repository for submission\033[m"
 	test -d .git || git init .
 	git add .
-	git commit -m "Deploy" --allow-empty
-	git remote show origin || git remote add origin $(DEPLOY_REPO)
-	git push -f origin master
+	git commit -m "submit: $(NAME)" --allow-empty > last_submit_commit.log 2>&1
+	git remote show origin 2> /dev/null \
+		|| git remote add origin $(SUBMIT_REPO)
+	@ echo "\033[35mstatrt submit\033[m"
+	git push -f origin master 2> /dev/null && echo "\033[32msuccess submit\033[m"
+	@ echo "\033[33mdelete tmp repository\033[m"
 	rm -rf .git
-	echo "\033[32msuccess deproy\033[m"
+	@ echo "\033[32msucceeded\033[m"
 
 re: fclean all
 
-.PHONY: all clean fclean check re
+.PHONY: all clean fclean check submit re

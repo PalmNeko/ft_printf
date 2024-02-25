@@ -1,0 +1,11 @@
+
+services:
+  gcc:
+    image: gcc
+    container_name: ft_printf
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+    tty: true
+    command: "/bin/bash"

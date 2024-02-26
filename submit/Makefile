@@ -149,7 +149,7 @@ fclean: clean
 	$(RM) test
 
 test: $(NAME) main.c
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) main.c -L. -l ftprintf -o $@
 
 check: test
 	./test printf | cat -e > printf.log

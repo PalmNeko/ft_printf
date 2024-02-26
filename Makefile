@@ -21,22 +21,16 @@ INC_DIRS = $(dir $(shell find . -type f -name "*.h"))
 CFLAGS += $(addprefix -I, $(INC_DIRS))
 LIBS_TYCTEST = ./libs/libtyctest_main.a ./libs/libtyctest.a
 LIB_FT_PRINTF = submit/libftprintf.a
-LIB_FT = submit/Libft/libft.a
+
 all: $(NAME)
 
 -include $(DEPENDS)
 
-$(NAME): $(OBJS) $(LIBS_TYCTEST) $(LIB_FT_PRINTF) $(LIB_FT)
+$(NAME): $(OBJS) $(LIBS_TYCTEST) $(LIB_FT_PRINTF)
 	$(CC) $(CFLAGS) -o $(NAME) $^
 
 $(LIB_FT_PRINTF):
 	$(MAKE) --directory submit
-
-$(LIB_FT): submit/Libft
-	$(MAKE) --directory submit/Libft
-
-submit/Libft:
-	bash install_dep.sh
 
 check: $(NAME)
 	./$(NAME)
@@ -46,12 +40,10 @@ check: $(NAME)
 clean:
 	$(RM) $(OBJS) $(DEPENDS)
 	$(MAKE) --directory submit clean
-	$(MAKE) --directory submit/Libft clean
 
 fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) --directory submit fclean
-	$(MAKE) --directory submit/Libft fclean
 
 re: fclean all
 

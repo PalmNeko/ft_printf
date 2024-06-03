@@ -4,6 +4,7 @@
 		"errno.h": "c",
 		"libft.h": "c",
 		"conversion_specification.h": "c",
-		"aligned_print.h": "c"
+		"aligned_print.h": "c",
+		"stddef.h": "c"
 	}
 }

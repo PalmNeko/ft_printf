@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/02/20 18:24:37 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/06/03 12:18:53 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,36 +101,6 @@ $(NAME_BONUS): $(LIBFT) $(OBJS_BONUS)
 
 $(LIBFT):
 	"$(MAKE)" --directory Libft
-
-update_bonus:
-	mkdir -p bonus_files
-	@for i in $(SRCS); \
-	do \
-		bonus_file_name=$$(echo $$i | sed -E 's/\.c$$/_bonus\.c/g'); \
-		bonus_file_name="bonus_files/$$(basename $$bonus_file_name)"; \
-		cp $$i $$bonus_file_name; \
-		sed -i".bak" -E 's/\.h"$$/_bonus\.h"/g' $$bonus_file_name; \
-		bonus_file_base_name="$$(basename $$bonus_file_name | sed 's/\./\\./g')"; \
-		file_base_name="$$(basename $$i | sed 's/\./\\./g')      "; \
-		sed -i".bak" "s/$$file_base_name/$$bonus_file_base_name/g" $$bonus_file_name; \
-		sed -i".bak" 's/libft_bonus.h/libft.h/g' $$bonus_file_name; \
-	done
-	@for i in $(INCLUDES); \
-	do \
-		if [[ ! $$i =~ "libft" ]]; then \
-			bonus_file_name=$$(echo $$i | sed -E 's/\.h$$/_bonus\.h/g'); \
-			bonus_file_name="bonus_files/$$(basename $$bonus_file_name)"; \
-			cp $$i $$bonus_file_name; \
-			sed -i".bak" -E 's/\.h"$$/_bonus\.h"/g' $$bonus_file_name; \
-			sed -i".bak" 's/libft_bonus.h/libft.h/g' $$bonus_file_name; \
-			bonus_file_base_name="$$(basename $$bonus_file_name | sed 's/\./\\./g')"; \
-			file_base_name="$$(basename $$i | sed 's/\./\\./g')      "; \
-			sed -i".bak" "s/$$file_base_name/$$bonus_file_base_name/g" $$bonus_file_name; \
-			file_base_name_header=$$(echo $$file_base_name | tr "[a-z]" "[A-Z]" | tr '.' '_'); \
-			bonus_file_base_name_header=$$(echo $$bonus_file_base_name | tr "[a-z]" "[A-Z]" | tr '.' '_'); \
-			sed -i".bak" "s/$$file_base_name_header/$$bonus_file_base_name_header/g" $$bonus_file_name; \
-		fi; \
-	done
 
 clean:
 	"$(MAKE)" --directory Libft clean

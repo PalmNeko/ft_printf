@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tookuyam <tookuyam@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:07:08 by tookuyam          #+#    #+#              #
-#    Updated: 2023/11/09 13:20:26 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/22 14:18:56 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)
 INC_DIRS = $(dir $(shell find . -type f -name "*.h"))
 CFLAGS += $(addprefix -I, $(INC_DIRS))
-LIBS_TYCTEST = ./libs/libtyctest_main.a ./libs/libtyctest.a
+LIBS_TYCTEST = ./tyctest/libtyctest_main.a ./tyctest/libtyctest.a
 LIB_FT_PRINTF = submit/libftprintf.a
 
 all: $(NAME)
@@ -48,3 +48,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+tyctest/libtyctest_main.a tyctest/libtyctest.a:
+	make -C tyctest

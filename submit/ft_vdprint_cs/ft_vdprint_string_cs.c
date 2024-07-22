@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vdprint_string_cs.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 23:22:10 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/02/11 15:12:32 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/22 14:43:13 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	ft_vdprint_string_cs(int fd, t_cs *cs, va_list args)
 	char	*output_str;
 
 	output_str = va_arg(args, char *);
+	if (output_str == NULL && cs->is_specified_precision && cs->precision <= 5)
+		return (0);
 	return (print_string_fd_with_cs(fd, cs, output_str));
 }
 

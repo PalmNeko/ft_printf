@@ -19,8 +19,7 @@
 #include "libft.h"
 
 static int	print_cs(int fd, const char **format, va_list arg_ptr);
-static int	print_until_char_fd(int fd, const char *str, char c);
-static int	check_printf_format(const char *format);
+static int	print_until_char_fd(int fd, const char **format, char c);
 
 int	ft_vdprintf(int fd, const char *format, va_list arg_ptr)
 {
@@ -28,20 +27,12 @@ int	ft_vdprintf(int fd, const char *format, va_list arg_ptr)
 	int		tmp_len;
 
 	len = 0;
-	if (check_printf_format(format) == 0)
-		return (-1);
 	while (*format != '\0')
 	{
-		tmp_len = print_until_char_fd(fd, format, '%');
-		if (tmp_len < 0)
-			return (-1);
-		len += tmp_len;
-		format += tmp_len;
-		if (len > INT_MAX)
-			return (-1);
-		else if (*format == '\0')
-			return ((int)len);
-		tmp_len = print_cs(fd, &format, arg_ptr);
+		if (*format == '%')
+			tmp_len = print_cs(fd, &format, arg_ptr);
+		else
+			tmp_len = print_until_char_fd(fd, &format, '%');
 		if (tmp_len < 0)
 			return (-1);
 		len += tmp_len;
@@ -69,35 +60,17 @@ static int	print_cs(int fd, const char **format, va_list arg_ptr)
 	return (print_len);
 }
 
-static int	print_until_char_fd(int fd, const char *str, char c)
+static int	print_until_char_fd(int fd, const char **format, char c)
 {
-	size_t	len;
+	size_t		len;
+	const char	*str;
 
 	len = 0;
+	str = *format;
 	while (str[len] != c && str[len] != '\0' && len <= INT_MAX)
 		len++;
 	if (len > INT_MAX && str[len] != c && str[len] != '\0')
 		return (-1);
-	if (write(fd, str, len) < 0)
-		return (-1);
-	return ((int)len);
-}
-
-static int	check_printf_format(const char *format)
-{
-	char	*conv_specification;
-	int		tmp_len;
-
-	conv_specification = ft_strchr(format, '%');
-	while (conv_specification != NULL)
-	{
-		if (check_conv_specification_format(conv_specification) == 0)
-			return (0);
-		tmp_len = get_cs_len(conv_specification);
-		if (tmp_len < 0)
-			return (-1);
-		conv_specification += tmp_len;
-		conv_specification = ft_strchr(conv_specification, '%');
-	}
-	return (true);
+	*format += len;
+	return ((int)write(fd, str, len));
 }

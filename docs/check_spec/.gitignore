@@ -1,0 +1,4 @@
+*.d
+*.o
+check_spec
+libft/

@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fp_add_sign.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/23 14:14:29 by tookuyam          #+#    #+#             */
+/*   Updated: 2024/07/23 14:24:54 by tookuyam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdbool.h>
+#include <stdlib.h>
+#include "libft.h"
+
+/**
+ * @param type
+ * 	0: none add,
+ * 	1: add + to positive value,
+ * 	2 add ' ' to positive value.
+ * @param len length of str. overwrite length of new str.
+ * @param str string. maybe free.
+ */
+char	*fp_add_sign(int type, int *len, char *str)
+{
+	char	*joined;
+	char	*add_sign;
+
+	if (str == NULL)
+		return (NULL);
+	if (type == 0 || str[0] == '-')
+		return (str);
+	if (type == 1)
+		add_sign = "+";
+	else if (type == 2)
+		add_sign = " ";
+	else
+		add_sign = "";
+	joined = ft_strjoin(add_sign, str);
+	free(str);
+	if (joined == NULL)
+		return (NULL);
+	*len += 1;
+	return (joined);
+}

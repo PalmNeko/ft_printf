@@ -12,12 +12,12 @@
 
 以下のようにコーディングできるようにする。
 
-print_align(cs, &size,
+print_align(field_width, minus_flag, &size,
 	add_sign(cs, &size,
 		pad_for_num(cs, &size,
 			int2str(precision, &size, num))))
 
-print_align(field_width, &size,
+print_align(field_width, minus_flag, &size,
 	to_upper(type == CS_UPPER, &size,
 		add_prefix(sharp, &size,
 			pad_for_num(zero, field_width, &size,
@@ -26,7 +26,7 @@ print_align(field_width, &size,
 print_align(field_width, &size,
 	chr2str(&size, chr))
 
-print_align(cs, &size,
+print_align(field_width, minus_flag, &size,
 	cut_string(precision, &size, str))
 
 caution: 共通仕様として、生成に失敗した場合、引数の文字列をfreeする。

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
+#    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/06/03 12:18:53 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/23 12:15:44 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ INCLUDES = \
 	./aligned_print/aligned_print.h \
 	./conversion_specification/conversion_specification.h \
 	./conversion_specification/conversion_specification_utils.h \
-	./ft_printf.h \
+	./fp.h \
 	./ft_vdprint_cs/_ft_vdprint_cs.h \
 	./ft_vdprint_cs/ft_vdprint_cs.h \
 	./ft_vdprintf/ft_vdprintf.h \

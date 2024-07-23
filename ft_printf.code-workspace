@@ -10,7 +10,7 @@
 			"conversion_specification.h": "c",
 			"aligned_print.h": "c",
 			"string_util.h": "c",
-			"ft_printf.h": "c"
+			"fp.h": "c"
 		}
 	}
 }

@@ -7,7 +7,7 @@
 #include <stdarg.h>
 #include <sys/stat.h>
 #include "ft_printf_test_tool.h"
-#include "ft_printf.h"
+#include "fp.h"
 #include "ft_vdprintf.h"
 
 # define RED "\033[31m"

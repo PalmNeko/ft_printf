@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:26:23 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/02/11 16:07:39 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 12:15:44 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tyctest.h"
 #include "ft_printf_test_tool.h"
-#include "ft_printf.h"
+#include "fp.h"
 #include <stdio.h>
 #include <limits.h>
 

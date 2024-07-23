@@ -6,13 +6,14 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 16:21:43 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:30:03 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
+#include "libft.h"
 #include "fp_module.h"
 
 char	*fp_gen_str(t_cs *cs, int *len, char *str);
@@ -25,6 +26,7 @@ int	fp_vdprint_cs(int fd, t_cs *cs, va_list args)
 	char	*out_string;
 	int		len;
 
+	len = 0;
 	out_string = NULL;
 	if (cs->conversion_specifier == CS_LOWER_D
 		|| cs->conversion_specifier == CS_LOWER_I)
@@ -104,6 +106,6 @@ char	*fp_gen_str(t_cs *cs, int *len, char *str)
 	cut_size = INT_MAX;
 	if (cs->is_specified_precision == true)
 		cut_size = cs->precision;
-	str = fp_cut_string(cut_size, len, str);
+	str = fp_cut_string(cut_size, len, ft_strdup(str));
 	return (str);
 }

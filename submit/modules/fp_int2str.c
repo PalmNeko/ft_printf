@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:37:05 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 16:17:56 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:37:13 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ char	*fp_int2str(int precision, int *len, int value)
 	}
 	else
 		pad_num = fp_pad_for_num(precision, len, numstr);
-	free(numstr);
 	return (pad_num);
 }

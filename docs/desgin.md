@@ -31,7 +31,12 @@ print_align(cs, &size,
 
 caution: 共通仕様として、生成に失敗した場合、引数の文字列をfreeする。
 
+* print_align: 0フラグが立っていないときに、空白を出力して、左右どちらかに寄せる。-フラグ
 * add_sign: 符号周りを処理する。+フラグ&&正の値なら+をつける。spaceフラグ&&正の値なら空白をつける。
 * pad_for_num: パディング周りを処理する。0フラグが立っていれば、0でパディング。無いなら処理しない。
-* print_align: 0フラグが立っていないときに、空白を出力して、左右どちらかに寄せる。-フラグ
+* int2str: int -> str変換
+* to_upper: 大文字に変換
+* add_prefix: 0xを頭につける。
+* uint2str: unsigned int -> str 変換
 * cut_string: 文字列をカットする。(s)
+* chr2str: char -> str 変換

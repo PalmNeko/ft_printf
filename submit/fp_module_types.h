@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   conversion_specification.h                         :+:      :+:    :+:   */
+/*   fp_module_types.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:49:40 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/02/11 15:03:53 by tookuyam         ###   ########.fr       */
+/*   Created: 2024/07/23 16:06:32 by tookuyam          #+#    #+#             */
+/*   Updated: 2024/07/23 16:07:26 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERSION_SPECIFICATION_H
-# define CONVERSION_SPECIFICATION_H
-
-# include <stdbool.h>
+#ifndef FP_MODULE_TYPES_H
+# define FP_MODULE_TYPES_H
 
 // conversion specifier
 typedef enum e_conversion_specifier
@@ -55,11 +53,5 @@ typedef struct s_conv_specification
 	bool					is_specified_precision;
 	int						precision;
 }	t_cs;
-
-t_cs	*new_t_cs(void);
-t_cs	*generate_cs(const char *format);
-int		get_cs_len(const char *format);
-void	free_t_cs(t_cs *ptr);
-int		check_conv_specification_format(const char *cs_format);
 
 #endif

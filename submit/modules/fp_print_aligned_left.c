@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 12:20:09 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 14:13:23 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:54:45 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	fp_print_aligned_left(int fd, int field_width, int *len, char *str)
 	if (str == NULL)
 		return (-1);
 	write_len = ft_write_aligned_left(fd, str, *len, field_width);
+	free(str);
 	if (write_len < 0 || INT_MAX < write_len)
-		return (free(str), -1);
+		return (-1);
 	return ((int)write_len);
 }

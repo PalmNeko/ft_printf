@@ -14,8 +14,7 @@
 #include <stddef.h>
 #include <limits.h>
 #include <unistd.h>
-#include "conversion_specification.h"
-#include "ft_vdprint_cs.h"
+#include "fp_module.h"
 #include "libft.h"
 
 static int	print_cs(int fd, const char **format, va_list arg_ptr);
@@ -51,7 +50,7 @@ static int	print_cs(int fd, const char **format, va_list arg_ptr)
 	cs = generate_cs(*format);
 	if (cs == NULL)
 		return (-1);
-	print_len = ft_vdprint_cs(fd, cs, arg_ptr);
+	print_len = fp_vdprint_cs(fd, cs, arg_ptr);
 	free_t_cs(cs);
 	specification_len = get_cs_len(*format);
 	if (specification_len < 0)

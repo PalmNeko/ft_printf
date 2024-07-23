@@ -6,12 +6,13 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:52:41 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 15:03:24 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:18:22 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 #include <limits.h>
+#include <stdlib.h>
 #include "libft.h"
 
 char	*fp_add_0x(bool be_add, int	*len, char *str)

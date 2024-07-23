@@ -6,18 +6,17 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 16:01:35 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:21:43 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-#include "conversion_specification.h"
 #include "fp_module.h"
 
 char	*fp_gen_str(t_cs *cs, int *len, char *str);
-char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned int uchr);
+char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
 char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value);
 char	*fp_gen_intstr(t_cs *cs, int *len, int value);
 
@@ -31,9 +30,9 @@ int	fp_vdprint_cs(int fd, t_cs *cs, va_list args)
 		|| cs->conversion_specifier == CS_LOWER_I)
 		out_string = fp_gen_intstr(cs, &len, va_arg(args, int));
 	else if (cs->conversion_specifier == CS_LOWER_S)
-		out_string = fp_gen_str(cs, &len, va_arg(args, int));
+		out_string = fp_gen_str(cs, &len, va_arg(args, char *));
 	else if (cs->conversion_specifier == CS_LOWER_C)
-		out_string = fp_gen_chrstr(cs, &len, va_arg(args, unsigned char));
+		out_string = fp_gen_chrstr(cs, &len, (unsigned char)va_arg(args, int));
 	else if (cs->conversion_specifier == CS_PERCENT)
 		return (write(fd, "%", 1));
 	else if (cs->conversion_specifier == CS_LOWER_X
@@ -89,17 +88,17 @@ char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value)
 	return (str);
 }
 
-char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned int uchr)
+char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr)
 {
 	char	*str;
 
+	(void)cs;
 	str = fp_uchr2str(len, uchr);
 	return (str);
 }
 
 char	*fp_gen_str(t_cs *cs, int *len, char *str)
 {
-	char	*str;
 	int		cut_size;
 
 	cut_size = INT_MAX;

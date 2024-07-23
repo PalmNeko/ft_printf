@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "conversion_specification.h"
-#include "conversion_specification_utils.h"
+#include "fp_module.h"
 #include "libft.h"
 #include <stdlib.h>
 #include <errno.h>

@@ -6,10 +6,11 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:03:38 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 15:10:56 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:18:39 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 #include "fp_module.h"
 
@@ -32,7 +33,7 @@ char	*fp_uint2str(int precision, int *len, unsigned int value, int base)
 		*len = precision;
 	else
 		*len = num_len;
-	pad_num = fp_pad_for_num(precision, *len, numstr);
+	pad_num = fp_pad_for_num(precision, len, numstr);
 	free(numstr);
 	return (pad_num);
 }

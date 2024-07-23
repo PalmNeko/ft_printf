@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:16:07 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 15:18:25 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:19:19 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*fp_uchr2str(int *size, unsigned char chr)
 {
-	unsigned char	new_str[2];
+	char	new_str[2];
 
 	new_str[0] = chr;
 	new_str[1] = '\0';

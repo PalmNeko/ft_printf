@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:22:50 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 14:36:12 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:17:28 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*fp_pad_for_num(int zero_field_width, int *size, char *str)
 	free(zero_nums);
 	if (tmp == NULL)
 		return (NULL);
-	joined = ft_strjoin("-" + 1 - sign_offset, tmp);
+	joined = ft_strjoin(&"-"[(1 - sign_offset)], tmp);
 	free(tmp);
 	return (joined);
 }

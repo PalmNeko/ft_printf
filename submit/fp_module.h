@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 16:08:57 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:15:57 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FP_MODULE_H
 
 # include <stdbool.h>
+# include <stdarg.h>
 # include "fp_module_types.h"
 
 int		fp_print_aligned_left(int fd, int field_width, int *len, char *str);

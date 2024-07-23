@@ -6,12 +6,13 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 12:20:09 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 15:54:45 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:16:38 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <limits.h>
 #include "libft.h"
 

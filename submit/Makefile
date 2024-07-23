@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/23 12:15:44 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/23 16:14:23 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,45 +18,28 @@ LIBFT = Libft/libft.a
 
 # compile settings
 CC = cc
-CFLAGS += -Wall -Werror -Wextra
+CFLAGS += -Wall -Werror -Wextra -I Libft -I .
 SRCS += \
-	./aligned_print/t_conv_aligned_print.c \
-	./aligned_print/t_conv_aligned_print_char.c \
-	./conversion_specification/check_conv_specification_format.c \
-	./conversion_specification/free_t_cs.c \
-	./conversion_specification/generate_cs.c \
-	./conversion_specification/get_cs_len.c \
-	./conversion_specification/is_conversion_specifier.c \
-	./conversion_specification/is_flag.c \
-	./conversion_specification/is_set_zero_precision.c \
-	./conversion_specification/new_t_cs.c \
-	./ft_printf/ft_printf.c \
-	./ft_vdprint_cs/ft_vdprint_char_cs.c \
-	./ft_vdprint_cs/ft_vdprint_cs.c \
-	./ft_vdprint_cs/ft_vdprint_decimal_cs.c \
-	./ft_vdprint_cs/ft_vdprint_hex_cs.c \
-	./ft_vdprint_cs/ft_vdprint_hex_upper_cs.c \
-	./ft_vdprint_cs/ft_vdprint_int_cs.c \
-	./ft_vdprint_cs/ft_vdprint_percent_cs.c \
-	./ft_vdprint_cs/ft_vdprint_pointer_cs.c \
-	./ft_vdprint_cs/ft_vdprint_string_cs.c \
-	./ft_vdprint_cs/ft_vdprint_uint_cs.c \
-	./ft_vdprint_cs/generate_ul_hex_with_cs.c \
-	./ft_vdprintf/ft_vdprintf.c \
-	./utils/pad_zero_str.c \
-	./utils/repeat_print_fd.c \
-	./utils/zero_pad_with_cs.c
-
-INCLUDES = \
-	./aligned_print/aligned_print.h \
-	./conversion_specification/conversion_specification.h \
-	./conversion_specification/conversion_specification_utils.h \
-	./fp.h \
-	./ft_vdprint_cs/_ft_vdprint_cs.h \
-	./ft_vdprint_cs/ft_vdprint_cs.h \
-	./ft_vdprintf/ft_vdprintf.h \
-	./Libft/libft.h \
-	./utils/string_util.h
+	./features/ft_printf.c \
+	./features/ft_vdprintf.c \
+	./modules/free_t_cs.c \
+	./modules/generate_cs.c \
+	./modules/get_cs_len.c \
+	./modules/is_conversion_specifier.c \
+	./modules/is_flag.c \
+	./modules/is_set_zero_precision.c \
+	./modules/new_t_cs.c \
+	./modules/fp_print_aligned_left.c \
+	./modules/fp_print_aligned_right.c \
+	./modules/fp_add_sign.c \
+	./modules/fp_pad_for_num.c \
+	./modules/fp_int2str.c \
+	./modules/fp_to_upper.c \
+	./modules/fp_add_0x.c \
+	./modules/fp_uint2str.c \
+	./modules/fp_uchr2str.c \
+	./modules/fp_vdprint_cs.c \
+	./modules/fp_cut_string.c
 
 OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)
@@ -65,21 +48,6 @@ NAME_BONUS = bonus
 SRC_BONUS = $(addprefix bonus_files/, $(notdir $(SRCS:.c=_bonus.c)))
 OBJS_BONUS = $(SRC_BONUS:.c=.o)
 DEPENDS_BONUS = $(SRC_BONUS:.c=.d)
-
-
-CFLAGS += -MMD -MP
-INC_DIRS = \
-	. \
-	aligned_print \
-	conversion_specification \
-	ft_printf \
-	ft_vdprint_cs \
-	ft_vdprintf \
-	Libft \
-	utils \
-	bonus_files
-
-CFLAGS += $(addprefix -I, $(INC_DIRS))
 
 # all
 all: $(NAME)

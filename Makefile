@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:07:08 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/22 14:18:56 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 15:45:00 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,10 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBS_TYCTEST) $(LIB_FT_PRINTF)
 	$(CC) $(CFLAGS) -o $(NAME) $^
 
-$(LIB_FT_PRINTF):
+$(LIB_FT_PRINTF): FORCE
 	$(MAKE) --directory submit
+
+FORCE:
 
 check: $(NAME)
 	./$(NAME)

@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/24 15:27:07 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 16:13:19 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT = Libft/libft.a
 
 # compile settings
 CC = cc
-CFLAGS += -Wall -Werror -Wextra -I Libft -I .
+CFLAGS += -g -O0 -Wall -Werror -Wextra -I Libft -I .
 SRCS += \
 	./features/ft_printf.c \
 	./features/ft_vdprintf.c \

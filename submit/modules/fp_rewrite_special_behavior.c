@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 14:24:47 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 15:03:11 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:12:18 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	fp_rewrite_precision(t_cs *cs)
 		&& (cs->conversion_specifier == CS_LOWER_D
 			|| cs->conversion_specifier == CS_LOWER_I
 			|| cs->conversion_specifier == CS_LOWER_X
+			|| cs->conversion_specifier == CS_LOWER_P
 			|| cs->conversion_specifier == CS_LOWER_U
 			|| cs->conversion_specifier == CS_UPPER_X))
 		cs->precision = 1;
@@ -31,6 +32,7 @@ void	fp_rewrite_flag_zero(t_cs *cs)
 			|| cs->conversion_specifier == CS_LOWER_I
 			|| cs->conversion_specifier == CS_LOWER_U
 			|| cs->conversion_specifier == CS_LOWER_X
+			|| cs->conversion_specifier == CS_LOWER_P
 			|| cs->conversion_specifier == CS_UPPER_X))
 		cs->flag_zero = false;
 }

@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/23 16:14:23 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 14:43:00 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS += \
 	./modules/fp_int2str.c \
 	./modules/fp_to_upper.c \
 	./modules/fp_add_0x.c \
+	./modules/fp_rewrite_special_behavior.c \
 	./modules/fp_uint2str.c \
 	./modules/fp_uchr2str.c \
 	./modules/fp_vdprint_cs.c \

@@ -43,6 +43,7 @@ t_cs	*generate_cs(const char *format)
 		free_t_cs(cs);
 		return (NULL);
 	}
+	fp_rewrite_special_behavior(cs);
 	return (cs);
 }
 
@@ -86,6 +87,11 @@ static void	read_precision(t_cs *cs, const char **format)
 	*format += 1;
 	cs->is_specified_precision = true;
 	cs->precision = ft_atoi(*format);
+	if (cs->precision < 0)
+	{
+		cs->precision = 0;
+		cs->is_specified_precision = false;
+	}
 	while (ft_isdigit(**format))
 		*format += 1;
 	return ;

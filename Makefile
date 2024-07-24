@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
+#    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:07:08 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/24 16:15:43 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 18:05:10 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,11 @@ all: $(NAME)
 
 -include $(DEPENDS)
 
-$(NAME): $(OBJS) $(LIBS_TYCTEST) $(LIB_FT_PRINTF)
+$(NAME):  $(LIBS_TYCTEST) $(LIB_FT_PRINTF) $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $^
 
 $(LIB_FT_PRINTF): FORCE
-	$(MAKE) --directory submit
+	make --directory submit
 
 FORCE:
 
@@ -41,15 +41,18 @@ check: $(NAME)
 
 clean:
 	$(RM) $(OBJS) $(DEPENDS)
-	$(MAKE) --directory submit clean
+	make --directory submit clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) --directory submit fclean
+	make --directory submit fclean
 
 re: fclean all
 
 .PHONY: all clean fclean re
 
-tyctest/libtyctest_main.a tyctest/libtyctest.a:
+tyctest/libtyctest_main.a tyctest/libtyctest.a: tyctest
 	make -C tyctest
+
+tyctest:
+	git clone git@github.com:PalmNeko/tyctest.git $@

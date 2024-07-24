@@ -8,7 +8,6 @@
 #include <sys/stat.h>
 #include "ft_printf_test_tool.h"
 #include "fp.h"
-#include "ft_vdprintf.h"
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"

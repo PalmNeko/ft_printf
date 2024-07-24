@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/24 16:13:19 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 16:59:46 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,14 +48,8 @@ SRCS += \
 	./modules/fp_gen_uintstr.c \
 	./modules/fp_gen_str.c
 
-
 OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)
-
-NAME_BONUS = bonus
-SRC_BONUS = $(addprefix bonus_files/, $(notdir $(SRCS:.c=_bonus.c)))
-OBJS_BONUS = $(SRC_BONUS:.c=.o)
-DEPENDS_BONUS = $(SRC_BONUS:.c=.d)
 
 # all
 all: $(NAME)
@@ -69,11 +63,7 @@ $(NAME): $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(filter %.o, $^)
 
-$(NAME_BONUS): $(LIBFT) $(OBJS_BONUS)
-	$(RM) $(NAME)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(filter %.o, $^)
-	date > bonus
+bonus: $(NAME)
 
 $(LIBFT):
 	"$(MAKE)" --directory Libft

@@ -6,13 +6,13 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:08:45 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:25:47 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:44:25 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fp_module.h"
 
-char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value, int base)
+char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base)
 {
 	char	*str;
 	int		zero_field_width;

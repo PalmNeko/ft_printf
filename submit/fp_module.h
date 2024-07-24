@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:26:07 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:47:36 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*fp_add_sign(int type, int *len, char *str);
 char	*fp_pad_for_num(int zero_field_width, int *size, char *str);
 char	*fp_int2str(int precision, int *len, int value);
 char	*fp_add_0x(bool be_add, int	*len, char *str);
-char	*fp_uint2str(int precision, int *len, unsigned int value, int base);
+char	*fp_uint2str(int precision, int *len, unsigned long value, int base);
 char	*fp_cut_string(int length, int *size, char *str);
 char	*fp_to_upper(bool be_upper, int *len, char *str);
 char	*fp_uchr2str(int *size, unsigned char chr);
@@ -38,9 +38,9 @@ bool	is_conversion_specifier(char c);
 bool	is_set_zero_precision(t_cs *cs);
 char	*fp_gen_str(t_cs *cs, int *len, char *str);
 char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
-char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value, int base);
+char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base);
 char	*fp_gen_intstr(t_cs *cs, int *len, int value);
 char	*fp_ptr2str(int precision, int *len, unsigned int value);
-char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned int value);
+char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value);
 
 #endif

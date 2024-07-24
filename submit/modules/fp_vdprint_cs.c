@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:26:59 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:47:05 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ char	*fp_gen_vdprint_cs(t_cs *cs, int *len, va_list args)
 	else if (cs->conversion_specifier == CS_LOWER_U)
 		out_string = fp_gen_uintstr(cs, len, va_arg(args, unsigned int), 10);
 	else if (cs->conversion_specifier == CS_LOWER_P)
-		out_string = fp_gen_ptrstr(cs, len, va_arg(args, unsigned int));
+		out_string = fp_gen_ptrstr(cs, len, va_arg(args, unsigned long));
 	return (out_string);
 }

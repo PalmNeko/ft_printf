@@ -6,14 +6,14 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:22:41 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:27:09 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:47:47 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fp_module.h"
 #include "libft.h"
 
-char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned int value)
+char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value)
 {
 	int	sign_type;
 

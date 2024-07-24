@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:07:08 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/24 15:45:00 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 16:15:43 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS += $(shell find tests -name "*.c")
 OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)
 INC_DIRS = $(dir $(shell find . -type f -name "*.h"))
-CFLAGS += $(addprefix -I, $(INC_DIRS))
+CFLAGS += -g -O0 $(addprefix -I, $(INC_DIRS))
 LIBS_TYCTEST = ./tyctest/libtyctest_main.a ./tyctest/libtyctest.a
 LIB_FT_PRINTF = submit/libftprintf.a
 

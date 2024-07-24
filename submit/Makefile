@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/24 14:43:00 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/24 15:27:07 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ CFLAGS += -Wall -Werror -Wextra -I Libft -I .
 SRCS += \
 	./features/ft_printf.c \
 	./features/ft_vdprintf.c \
+	./modules/fp_gen_intstr.c \
+	./modules/fp_ptr2str.c \
 	./modules/free_t_cs.c \
 	./modules/generate_cs.c \
 	./modules/get_cs_len.c \
@@ -35,12 +37,17 @@ SRCS += \
 	./modules/fp_pad_for_num.c \
 	./modules/fp_int2str.c \
 	./modules/fp_to_upper.c \
-	./modules/fp_add_0x.c \
-	./modules/fp_rewrite_special_behavior.c \
 	./modules/fp_uint2str.c \
 	./modules/fp_uchr2str.c \
 	./modules/fp_vdprint_cs.c \
-	./modules/fp_cut_string.c
+	./modules/fp_cut_string.c \
+	./modules/fp_gen_chrstr.c \
+	./modules/fp_gen_ptrstr.c \
+	./modules/fp_add_0x.c \
+	./modules/fp_rewrite_special_behavior.c \
+	./modules/fp_gen_uintstr.c \
+	./modules/fp_gen_str.c
+
 
 OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)

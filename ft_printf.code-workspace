@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"files.associations": {
+			"*.h": "c",
 			"libft.h": "c",
 			"conversion_specification.h": "c",
 			"aligned_print.h": "c",

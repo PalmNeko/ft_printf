@@ -14,6 +14,8 @@
 # define YELLOW "\033[33m"
 # define CL "\033[m"
 
+bool vcheck_ft_printf(const char *format, va_list ap);
+
 bool check_ft_printf(const char *format, ...) {
 	va_list ap;
 	bool result;

@@ -6,12 +6,13 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:11:00 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 15:11:24 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:28:12 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include "fp_module.h"
+#include "libft.h"
 
 char	*fp_gen_str(t_cs *cs, int *len, char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 15:27:29 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 16:26:07 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ bool	is_conversion_specifier(char c);
 bool	is_set_zero_precision(t_cs *cs);
 char	*fp_gen_str(t_cs *cs, int *len, char *str);
 char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
-char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value);
+char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value, int base);
 char	*fp_gen_intstr(t_cs *cs, int *len, int value);
 char	*fp_ptr2str(int precision, int *len, unsigned int value);
 char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned int value);

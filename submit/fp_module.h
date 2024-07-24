@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 14:32:59 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:13:40 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ void	fp_rewrite_special_behavior(t_cs *cs);
 bool	is_flags(char c);
 bool	is_conversion_specifier(char c);
 bool	is_set_zero_precision(t_cs *cs);
+char	*fp_gen_str(t_cs *cs, int *len, char *str);
+char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
+char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned int value);
+char	*fp_gen_intstr(t_cs *cs, int *len, int value);
 
 #endif

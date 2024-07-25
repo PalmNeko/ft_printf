@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:09:39 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 15:38:52 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:52:22 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*fp_gen_intstr(t_cs *cs, int *len, int value)
 
 	sign_type = fp_get_sign_type(cs);
 	zero_field_width = 0;
-	if (cs->flag_zero && cs->is_specified_min_field_width)
-		zero_field_width = cs->minimum_field_width;
+	if (cs->flag_zero && cs->is_set_field_width)
+		zero_field_width = cs->field_width;
 	tmp = fp_convert_int2str(cs->precision, len, value);
 	if (tmp == NULL)
 		return (NULL);

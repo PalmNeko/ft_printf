@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:11:00 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:59:28 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:53:36 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*fp_gen_str(t_cs *cs, int *len, char *str)
 
 	if (str == NULL)
 	{
-		if (cs->is_specified_precision && cs->precision < 6)
+		if (cs->is_set_precision && cs->precision < 6)
 			str = ft_strdup("");
 		else
 			str = ft_strdup("(null)");
@@ -32,7 +32,7 @@ char	*fp_gen_str(t_cs *cs, int *len, char *str)
 		str = ft_strdup(str);
 	if (str == NULL)
 		return (NULL);
-	if (cs->is_specified_precision == true)
+	if (cs->is_set_precision == true)
 	{
 		tmp = fp_cut_string(cs->precision, len, str);
 		free(str);

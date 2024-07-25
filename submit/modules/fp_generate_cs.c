@@ -39,7 +39,7 @@ t_cs	*fp_generate_cs(const char *format)
 	read_min_field_width(cs, &format);
 	read_precision(cs, &format);
 	read_cs(cs, &format);
-	if (cs->conversion_specifier == CS_NONE || errno == ERANGE)
+	if (cs->type == CS_NONE || errno == ERANGE)
 	{
 		fp_destroy_t_cs(cs);
 		return (NULL);
@@ -74,8 +74,8 @@ static void	read_min_field_width(t_cs *cs, const char **format)
 {
 	if (! ft_isdigit(**format))
 		return ;
-	cs->is_specified_min_field_width = true;
-	cs->minimum_field_width = ft_strtol(*format, (char **)format, 10);
+	cs->is_set_field_width = true;
+	cs->field_width = ft_strtol(*format, (char **)format, 10);
 	return ;
 }
 
@@ -84,12 +84,12 @@ static void	read_precision(t_cs *cs, const char **format)
 	if (**format != '.')
 		return ;
 	*format += 1;
-	cs->is_specified_precision = true;
+	cs->is_set_precision = true;
 	cs->precision = ft_strtol(*format, (char **)format, 10);
 	if (cs->precision < 0)
 	{
 		cs->precision = 0;
-		cs->is_specified_precision = false;
+		cs->is_set_precision = false;
 	}
 	return ;
 }
@@ -97,24 +97,24 @@ static void	read_precision(t_cs *cs, const char **format)
 static void	read_cs(t_cs *cs, const char **fmt)
 {
 	if (**fmt == 'c')
-		cs->conversion_specifier = CS_LOWER_C;
+		cs->type = CS_LOWER_C;
 	else if (**fmt == 'd')
-		cs->conversion_specifier = CS_LOWER_D;
+		cs->type = CS_LOWER_D;
 	else if (**fmt == 'i')
-		cs->conversion_specifier = CS_LOWER_I;
+		cs->type = CS_LOWER_I;
 	else if (**fmt == 'p')
-		cs->conversion_specifier = CS_LOWER_P;
+		cs->type = CS_LOWER_P;
 	else if (**fmt == 's')
-		cs->conversion_specifier = CS_LOWER_S;
+		cs->type = CS_LOWER_S;
 	else if (**fmt == 'u')
-		cs->conversion_specifier = CS_LOWER_U;
+		cs->type = CS_LOWER_U;
 	else if (**fmt == 'x')
-		cs->conversion_specifier = CS_LOWER_X;
+		cs->type = CS_LOWER_X;
 	else if (**fmt == 'X')
-		cs->conversion_specifier = CS_UPPER_X;
+		cs->type = CS_UPPER_X;
 	else if (**fmt == '%')
-		cs->conversion_specifier = CS_PERCENT;
+		cs->type = CS_PERCENT;
 	else
-		cs->conversion_specifier = CS_NONE;
+		cs->type = CS_NONE;
 	return ;
 }

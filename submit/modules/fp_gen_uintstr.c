@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:08:45 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:53:25 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:54:30 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base)
 	int		zero_field_width;
 
 	zero_field_width = 0;
-	if (cs->flag_zero && cs->is_specified_min_field_width)
-		zero_field_width = cs->minimum_field_width;
+	if (cs->flag_zero && cs->is_set_field_width)
+		zero_field_width = cs->field_width;
 	tmp = fp_convert_uint2str(cs->precision, len, value, base);
 	if (tmp == NULL)
 		return (NULL);
@@ -37,6 +37,6 @@ char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base)
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;
-	fp_to_upper(cs->conversion_specifier == CS_UPPER_X, len, str);
+	fp_to_upper(cs->type == CS_UPPER_X, len, str);
 	return (str);
 }

@@ -23,15 +23,15 @@ t_cs	*fp_new_t_cs(void)
 	if (cs == NULL)
 		return (NULL);
 	*cs = (t_cs){
-		.conversion_specifier = CS_NONE,
+		.type = CS_NONE,
 		.flag_minus = false,
 		.flag_plus = false,
 		.flag_sharp = false,
 		.flag_space = false,
 		.flag_zero = false,
-		.is_specified_min_field_width = false,
-		.is_specified_precision = false,
-		.minimum_field_width = 0,
+		.is_set_field_width = false,
+		.is_set_precision = false,
+		.field_width = 0,
 		.precision = 0,
 	};
 	return (cs);

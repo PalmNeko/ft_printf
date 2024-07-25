@@ -74,9 +74,7 @@ static void	read_min_field_width(t_cs *cs, const char **format)
 	if (! ft_isdigit(**format))
 		return ;
 	cs->is_specified_min_field_width = true;
-	cs->minimum_field_width = ft_atoi(*format);
-	while (ft_isdigit(**format))
-		*format += 1;
+	cs->minimum_field_width = ft_strtol(*format, (char **)format, 10);
 	return ;
 }
 
@@ -86,14 +84,12 @@ static void	read_precision(t_cs *cs, const char **format)
 		return ;
 	*format += 1;
 	cs->is_specified_precision = true;
-	cs->precision = ft_atoi(*format);
+	cs->precision = ft_strtol(*format, (char **)format, 10);
 	if (cs->precision < 0)
 	{
 		cs->precision = 0;
 		cs->is_specified_precision = false;
 	}
-	while (ft_isdigit(**format))
-		*format += 1;
 	return ;
 }
 

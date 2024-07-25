@@ -31,5 +31,6 @@ char	*fp_convert_int2str(int precision, int *len, int value)
 		pad_num = fp_pad_for_num(precision + 1, len, numstr);
 	else
 		pad_num = fp_pad_for_num(precision, len, numstr);
+	free(numstr);
 	return (pad_num);
 }

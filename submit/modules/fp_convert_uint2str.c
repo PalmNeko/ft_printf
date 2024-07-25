@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:03:38 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 13:36:23 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:18:18 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*fp_convert_uint2str(int precision, int *len, unsigned long value, int base
 {
 	char	*numstr;
 	char	*pad_num;
-	size_t	num_len;
 
 	*len = 0;
 	if (precision == 0 && value == 0)
@@ -29,12 +28,9 @@ char	*fp_convert_uint2str(int precision, int *len, unsigned long value, int base
 	numstr = ft_ultoa_base_str(value, get_base_str(base));
 	if (numstr == NULL)
 		return (NULL);
-	num_len = ft_strlen(numstr);
-	if (precision > (int)num_len)
-		*len = precision;
-	else
-		*len = num_len;
+	*len = ft_strlen(numstr);
 	pad_num = fp_pad_for_num(precision, len, numstr);
+	free(numstr);
 	return (pad_num);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 15:11:34 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:03:11 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	fp_vdprint_cs(int fd, t_cs *cs, va_list args)
 {
 	char	*out_string;
 	int		len;
+	int		out_len;
 
 	len = 0;
 	out_string = NULL;
@@ -31,11 +32,11 @@ int	fp_vdprint_cs(int fd, t_cs *cs, va_list args)
 	if (out_string == NULL)
 		return (-1);
 	if (cs->flag_minus)
-		fp_print_aligned_left(fd, cs->minimum_field_width, &len, out_string);
+		out_len = fp_print_aligned_left(fd, cs->minimum_field_width, &len, out_string);
 	else
-		fp_print_aligned_right(fd, cs->minimum_field_width, &len, out_string);
+		out_len = fp_print_aligned_right(fd, cs->minimum_field_width, &len, out_string);
 	free(out_string);
-	return (len);
+	return (out_len);
 }
 
 char	*fp_gen_vdprint_cs(t_cs *cs, int *len, va_list args)

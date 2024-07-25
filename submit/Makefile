@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 16:34:54 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 16:42:59 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ LIBFT = Libft/libft.a
 CC = cc
 CFLAGS += -g -O0 -Wall -Werror -Wextra -MP -MMD -I Libft -I .
 SRCS += \
-	./features/ft_printf.c \
-	./features/ft_vdprintf.c \
+	./ft_printf.c \
+	./ft_vdprintf.c \
 	./modules/fp_gen_intstr.c \
 	./modules/fp_convert_ptr2str.c \
 	./modules/free_t_cs.c \

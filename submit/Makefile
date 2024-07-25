@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 15:41:11 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 16:08:20 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +66,11 @@ $(NAME): $(LIBFT) $(OBJS)
 
 bonus: $(NAME)
 
-$(LIBFT):
+$(LIBFT): $(dir $(LIBFT))
 	"$(MAKE)" --directory Libft
+
+$(dir $(LIBFT)):
+	git clone git@github.com:PalmNeko/Libft.git $@
 
 clean:
 	"$(MAKE)" --directory Libft clean

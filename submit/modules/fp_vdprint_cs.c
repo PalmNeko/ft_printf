@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:58:59 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:05:42 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,13 @@ char	*fp_gen_vdprint_cs(t_cs *cs, int *len, va_list args)
 	char	*out_string;
 
 	out_string = NULL;
-	if (cs->type == 'd'
-		|| cs->type == 'i')
+	if (ft_includes(cs->type, "di"))
 		out_string = fp_gen_intstr(cs, len, va_arg(args, int));
 	else if (cs->type == 's')
 		out_string = fp_gen_str(cs, len, va_arg(args, char *));
 	else if (cs->type == 'c')
 		out_string = fp_gen_chrstr(cs, len, (unsigned char)va_arg(args, int));
-	else if (cs->type == 'x'
-		|| cs->type == 'X')
+	else if (ft_includes(cs->type, "xX"))
 		out_string = fp_gen_uintstr(cs, len, va_arg(args, unsigned int), 16);
 	else if (cs->type == 'u')
 		out_string = fp_gen_uintstr(cs, len, va_arg(args, unsigned int), 10);

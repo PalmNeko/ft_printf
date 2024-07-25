@@ -29,7 +29,7 @@ int	get_cs_len(const char *format)
 		return (-1);
 	while (is_flags(format[index]))
 		index++;
-	while ('1' <= format[index] && format[index] <= '9')
+	while (ft_isdigit(format[index]))
 		index++;
 	if (format[index] == '.')
 		index++;

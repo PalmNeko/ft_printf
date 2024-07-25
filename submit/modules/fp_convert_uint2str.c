@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fp_uint2str.c                                      :+:      :+:    :+:   */
+/*   fp_convert_uint2str.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:03:38 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:43:20 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 13:36:23 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static char	*get_base_str(int base);
 
-char	*fp_uint2str(int precision, int *len, unsigned long value, int base)
+char	*fp_convert_uint2str(int precision, int *len, unsigned long value, int base)
 {
 	char	*numstr;
 	char	*pad_num;

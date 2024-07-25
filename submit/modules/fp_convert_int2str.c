@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fp_int2str.c                                       :+:      :+:    :+:   */
+/*   fp_convert_int2str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,7 +15,7 @@
 #include "libft.h"
 #include "fp_module.h"
 
-char	*fp_int2str(int precision, int *len, int value)
+char	*fp_convert_int2str(int precision, int *len, int value)
 {
 	char	*numstr;
 	char	*pad_num;

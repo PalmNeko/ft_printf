@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 13:25:51 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 13:36:59 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS += \
 	./features/ft_printf.c \
 	./features/ft_vdprintf.c \
 	./modules/fp_gen_intstr.c \
-	./modules/fp_ptr2str.c \
+	./modules/fp_convert_ptr2str.c \
 	./modules/free_t_cs.c \
 	./modules/generate_cs.c \
 	./modules/get_cs_len.c \
@@ -35,10 +35,10 @@ SRCS += \
 	./modules/fp_print_aligned_right.c \
 	./modules/fp_add_sign.c \
 	./modules/fp_pad_for_num.c \
-	./modules/fp_int2str.c \
+	./modules/fp_convert_int2str.c \
 	./modules/fp_to_upper.c \
-	./modules/fp_uint2str.c \
-	./modules/fp_uchr2str.c \
+	./modules/fp_convert_uint2str.c \
+	./modules/fp_convert_uchr2str.c \
 	./modules/fp_vdprint_cs.c \
 	./modules/fp_cut_string.c \
 	./modules/fp_gen_chrstr.c \

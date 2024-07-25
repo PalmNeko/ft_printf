@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:09:39 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 15:09:54 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 13:35:13 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*fp_gen_intstr(t_cs *cs, int *len, int value)
 		zero_field_width = cs->minimum_field_width;
 	str = fp_add_sign(sign_type, len,
 			fp_pad_for_num(zero_field_width, len,
-				fp_int2str(cs->precision, len, value)));
+				fp_convert_int2str(cs->precision, len, value)));
 	return (str);
 }

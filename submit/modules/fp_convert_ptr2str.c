@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fp_ptr2str.c                                       :+:      :+:    :+:   */
+/*   fp_convert_ptr2str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,12 +13,12 @@
 #include "fp_module.h"
 #include "libft.h"
 
-char	*fp_ptr2str(int precision, int *len, unsigned int value)
+char	*fp_convert_ptr2str(int precision, int *len, unsigned int value)
 {
 	if (value == 0)
 	{
 		*len = 5;
 		return (ft_strdup("(nil)"));
 	}
-	return (fp_uint2str(precision, len, value, 16));
+	return (fp_convert_uint2str(precision, len, value, 16));
 }

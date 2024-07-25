@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 13:36:59 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 15:41:11 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRCS += \
 	./modules/fp_cut_string.c \
 	./modules/fp_gen_chrstr.c \
 	./modules/fp_gen_ptrstr.c \
+	./modules/fp_get_sign_type.c \
 	./modules/fp_add_0x.c \
 	./modules/fp_rewrite_special_behavior.c \
 	./modules/fp_gen_uintstr.c \

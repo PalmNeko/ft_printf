@@ -6,11 +6,12 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:22:41 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 15:05:39 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:39:18 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fp_module.h"
+#include "fp_module_int_defs.h"
 #include "libft.h"
 #include <stdlib.h>
 
@@ -20,12 +21,7 @@ char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value)
 	char	*tmp;
 	char	*str;
 
-	sign_type = 0;
-	if (cs->flag_plus)
-		sign_type = 1;
-	else if (cs->flag_space)
-		sign_type = 2;
-
+	sign_type = fp_get_sign_type(cs);
 	if (value == 0)
 	{
 		*len = 5;

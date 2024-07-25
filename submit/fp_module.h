@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 13:36:59 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:38:38 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
 char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base);
 char	*fp_gen_intstr(t_cs *cs, int *len, int value);
 char	*fp_convert_ptr2str(int precision, int *len, unsigned int value);
+int		fp_get_sign_type(t_cs *cs);
 char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value);
 
 #endif

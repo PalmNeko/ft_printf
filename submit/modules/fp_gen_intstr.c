@@ -6,11 +6,12 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:09:39 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:57:10 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:38:52 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fp_module.h"
+#include "fp_module_int_defs.h"
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -21,11 +22,7 @@ char	*fp_gen_intstr(t_cs *cs, int *len, int value)
 	int		zero_field_width;
 	char	*tmp;
 
-	sign_type = 0;
-	if (cs->flag_plus)
-		sign_type = 1;
-	else if (cs->flag_space)
-		sign_type = 2;
+	sign_type = fp_get_sign_type(cs);
 	zero_field_width = 0;
 	if (cs->flag_zero && cs->is_specified_min_field_width)
 		zero_field_width = cs->minimum_field_width;

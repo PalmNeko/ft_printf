@@ -39,7 +39,7 @@ t_cs	*fp_generate_cs(const char *format)
 	read_min_field_width(cs, &format);
 	read_precision(cs, &format);
 	read_cs(cs, &format);
-	if (cs->type == CS_NONE || errno == ERANGE)
+	if (cs->type == '\0' || errno == ERANGE)
 	{
 		fp_destroy_t_cs(cs);
 		return (NULL);
@@ -96,24 +96,8 @@ static void	read_precision(t_cs *cs, const char **format)
 
 static void	read_cs(t_cs *cs, const char **fmt)
 {
-	if (**fmt == 'c')
-		cs->type = 'c';
-	else if (**fmt == 'd')
-		cs->type = 'd';
-	else if (**fmt == 'i')
-		cs->type = 'i';
-	else if (**fmt == 'p')
-		cs->type = 'p';
-	else if (**fmt == 's')
-		cs->type = 's';
-	else if (**fmt == 'u')
-		cs->type = 'u';
-	else if (**fmt == 'x')
-		cs->type = 'x';
-	else if (**fmt == 'X')
-		cs->type = 'X';
-	else if (**fmt == '%')
-		cs->type = '%';
+	if (ft_includes(**fmt, FP_CONVERSION_TYPES))
+		cs->type = **fmt;
 	else
 		cs->type = '\0';
 	return ;

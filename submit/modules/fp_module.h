@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:49:04 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:12:41 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <stdarg.h>
 # include "fp_module_types.h"
 
-
 char	*fp_add_0x(bool be_add, int	*len, char *str);
 char	*fp_add_sign(int type, int *len, char *str);
 char	*fp_convert_int2str(int precision, int *len, int value);
 char	*fp_convert_ptr2str(int precision, int *len, unsigned int value);
 char	*fp_convert_uchr2str(int *size, unsigned char chr);
-char	*fp_convert_uint2str(int precision, int *len, unsigned long value, int base);
+char	*fp_convert_uint2str(
+			int precision, int *len, unsigned long value, int base);
 char	*fp_cut_string(int length, int *size, char *str);
 char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
 char	*fp_gen_intstr(t_cs *cs, int *len, int value);

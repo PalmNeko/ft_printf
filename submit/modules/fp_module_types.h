@@ -6,14 +6,14 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 16:06:32 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:59:24 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:12:47 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FP_MODULE_TYPES_H
 # define FP_MODULE_TYPES_H
 
-#include <stdbool.h>
+# include <stdbool.h>
 
 /** conversion specifier
  * @param conversion_specifier conversion specifier

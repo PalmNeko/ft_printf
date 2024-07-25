@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:11:00 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:53:36 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:14:27 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,10 @@ char	*fp_gen_str(t_cs *cs, int *len, char *str)
 	size_t	size;
 	char	*tmp;
 
-	if (str == NULL)
-	{
-		if (cs->is_set_precision && cs->precision < 6)
+	if (str == NULL && cs->is_set_precision && cs->precision < 6)
 			str = ft_strdup("");
-		else
+	else if (str == NULL)
 			str = ft_strdup("(null)");
-	}
 	else
 		str = ft_strdup(str);
 	if (str == NULL)

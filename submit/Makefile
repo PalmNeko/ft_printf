@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 16:08:20 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 16:26:09 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ SRCS += \
 	./modules/get_cs_len.c \
 	./modules/is_conversion_specifier.c \
 	./modules/is_flag.c \
-	./modules/is_set_zero_precision.c \
 	./modules/new_t_cs.c \
 	./modules/fp_print_aligned_left.c \
 	./modules/fp_print_aligned_right.c \

@@ -6,23 +6,35 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:08:45 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 13:36:23 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:48:27 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fp_module.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base)
 {
 	char	*str;
+	char	*tmp;
 	int		zero_field_width;
 
 	zero_field_width = 0;
 	if (cs->flag_zero && cs->is_specified_min_field_width)
 		zero_field_width = cs->minimum_field_width;
-	str = fp_to_upper(cs->conversion_specifier == CS_UPPER_X, len,
-			fp_add_0x(cs->flag_sharp, len,
-				fp_pad_for_num(zero_field_width, len,
-					fp_convert_uint2str(cs->precision, len, value, base))));
+	tmp = fp_convert_uint2str(cs->precision, len, value, base);
+	if (tmp == NULL)
+		return (NULL);
+	str = tmp;
+	tmp = fp_pad_for_num(zero_field_width, len, str);
+	if (tmp == NULL)
+		return (NULL);
+	str = tmp;
+	tmp = fp_add_0x(cs->flag_sharp, len, str);
+	if (tmp == NULL)
+		return (NULL);
+	str = tmp;
+	fp_to_upper(cs->conversion_specifier == CS_UPPER_X, len, str);
 	return (str);
 }

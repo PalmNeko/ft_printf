@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:11:00 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:42:05 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:50:17 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 char	*fp_gen_str(t_cs *cs, int *len, char *str)
 {
 	size_t	size;
+	char	*tmp;
 
 	if (str == NULL)
 	{
@@ -29,8 +30,15 @@ char	*fp_gen_str(t_cs *cs, int *len, char *str)
 	}
 	else
 		str = ft_strdup(str);
+	if (str == NULL)
+		return (NULL);
 	if (cs->is_specified_precision == true)
-		str = fp_cut_string(cs->precision, len, str);
+	{
+		tmp = fp_cut_string(cs->precision, len, str);
+		if (tmp == NULL)
+			return (NULL);
+		str = tmp;
+	}
 	size = ft_strnlen(str, (size_t)INT_MAX + 1);
 	if (size > INT_MAX)
 		return (free(str), NULL);

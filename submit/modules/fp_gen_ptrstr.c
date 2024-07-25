@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:22:41 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:47:47 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:37:55 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value)
 {
-	int	sign_type;
+	int		sign_type;
+	char	*tmp;
+	char	*str;
 
 	sign_type = 0;
 	if (cs->flag_plus)
@@ -28,5 +30,13 @@ char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value)
 		*len = 5;
 		return (ft_strdup("(nil)"));
 	}
-	return (fp_add_sign(sign_type, len, fp_gen_uintstr(cs, len, value, 16)));
+	tmp = fp_gen_uintstr(cs, len, value, 16);
+	if (tmp == NULL)
+		return (NULL);
+	str = tmp;
+	tmp = fp_add_sign(sign_type, len, str);
+	if (tmp == NULL)
+		return (NULL);
+	str = tmp;
+	return (str);
 }

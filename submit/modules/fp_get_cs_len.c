@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_cs_len.c                 :+:      :+:    :+:   */
+/*   fp_get_cs_len.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tookuyam <tookuyam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -21,7 +21,7 @@
  * @return return conversion specification length if of success.
  * negative value if of error.
 */
-int	get_cs_len(const char *format)
+int	fp_get_cs_len(const char *format)
 {
 	size_t	index;
 

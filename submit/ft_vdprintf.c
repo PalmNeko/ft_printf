@@ -47,12 +47,12 @@ static int	print_cs(int fd, const char **format, va_list arg_ptr)
 	int		print_len;
 	int		specification_len;
 
-	cs = generate_cs(*format);
+	cs = fp_generate_cs(*format);
 	if (cs == NULL)
 		return (-1);
 	print_len = fp_vdprint_cs(fd, cs, arg_ptr);
-	free_t_cs(cs);
-	specification_len = get_cs_len(*format);
+	fp_destroy_t_cs(cs);
+	specification_len = fp_get_cs_len(*format);
 	if (specification_len < 0)
 		return (-1);
 	*format += specification_len;

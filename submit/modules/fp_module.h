@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:34:58 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:45:54 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ char	*fp_convert_uint2str(int precision, int *len, unsigned long value, int base
 char	*fp_cut_string(int length, int *size, char *str);
 char	*fp_to_upper(bool be_upper, int *len, char *str);
 char	*fp_convert_uchr2str(int *size, unsigned char chr);
-t_cs	*new_t_cs(void);
-t_cs	*generate_cs(const char *format);
-int		get_cs_len(const char *format);
-void	free_t_cs(t_cs *ptr);
+t_cs	*fp_new_t_cs(void);
+t_cs	*fp_generate_cs(const char *format);
+int		fp_get_cs_len(const char *format);
+void	fp_destroy_t_cs(t_cs *ptr);
 void	fp_rewrite_special_behavior(t_cs *cs);
 char	*fp_gen_str(t_cs *cs, int *len, char *str);
 char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);

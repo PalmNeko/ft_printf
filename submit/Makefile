@@ -6,7 +6,7 @@
 #    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 16:42:59 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 16:45:54 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ SRCS += \
 	./ft_vdprintf.c \
 	./modules/fp_gen_intstr.c \
 	./modules/fp_convert_ptr2str.c \
-	./modules/free_t_cs.c \
-	./modules/generate_cs.c \
-	./modules/get_cs_len.c \
-	./modules/new_t_cs.c \
+	./modules/fp_destroy_t_cs.c \
+	./modules/fp_generate_cs.c \
+	./modules/fp_get_cs_len.c \
+	./modules/fp_new_t_cs.c \
 	./modules/fp_print_aligned_left.c \
 	./modules/fp_print_aligned_right.c \
 	./modules/fp_add_sign.c \

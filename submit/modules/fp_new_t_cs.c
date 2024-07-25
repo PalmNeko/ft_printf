@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_t_cs.c                   :+:      :+:    :+:   */
+/*   fp_new_t_cs.c                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tookuyam <tookuyam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-t_cs	*new_t_cs(void)
+t_cs	*fp_new_t_cs(void)
 {
 	t_cs	*cs;
 

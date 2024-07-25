@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_cs.c                     :+:      :+:    :+:   */
+/*   fp_generate_cs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tookuyam <tookuyam@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 12:39:22 by tookuyam          #+#    #+#             */
-/*   Updated: 2023/11/06 14:13:00 by tookuyam         ###   ########.fr       */
+/*   Created: 2024/07/25 16:44:54 by tookuyam          #+#    #+#             */
+/*   Updated: 2024/07/25 16:44:54 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static void	read_cs(t_cs *cs, const char **fmt);
  * @param format conversion format
  * @return
  */
-t_cs	*generate_cs(const char *format)
+t_cs	*fp_generate_cs(const char *format)
 {
 	t_cs	*cs;
 
 	if (*format++ != '%')
 		return (NULL);
-	cs = new_t_cs();
+	cs = fp_new_t_cs();
 	if (cs == NULL)
 		return (NULL);
 	read_flag (cs, &format);
@@ -41,7 +41,7 @@ t_cs	*generate_cs(const char *format)
 	read_cs(cs, &format);
 	if (cs->conversion_specifier == CS_NONE || errno == ERANGE)
 	{
-		free_t_cs(cs);
+		fp_destroy_t_cs(cs);
 		return (NULL);
 	}
 	fp_rewrite_special_behavior(cs);

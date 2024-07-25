@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
+#    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 16:07:08 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/24 18:05:10 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/25 17:20:10 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = tester
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -MMD -MP
 SRC_PATH = "./docs/*" "./sample_printf/*"
@@ -34,10 +34,8 @@ $(LIB_FT_PRINTF): FORCE
 
 FORCE:
 
-check: $(NAME)
+test: $(NAME)
 	./$(NAME)
-	cd submit
-	francinette -mb
 
 clean:
 	$(RM) $(OBJS) $(DEPENDS)

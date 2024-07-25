@@ -97,24 +97,24 @@ static void	read_precision(t_cs *cs, const char **format)
 static void	read_cs(t_cs *cs, const char **fmt)
 {
 	if (**fmt == 'c')
-		cs->type = CS_LOWER_C;
+		cs->type = 'c';
 	else if (**fmt == 'd')
-		cs->type = CS_LOWER_D;
+		cs->type = 'd';
 	else if (**fmt == 'i')
-		cs->type = CS_LOWER_I;
+		cs->type = 'i';
 	else if (**fmt == 'p')
-		cs->type = CS_LOWER_P;
+		cs->type = 'p';
 	else if (**fmt == 's')
-		cs->type = CS_LOWER_S;
+		cs->type = 's';
 	else if (**fmt == 'u')
-		cs->type = CS_LOWER_U;
+		cs->type = 'u';
 	else if (**fmt == 'x')
-		cs->type = CS_LOWER_X;
+		cs->type = 'x';
 	else if (**fmt == 'X')
-		cs->type = CS_UPPER_X;
+		cs->type = 'X';
 	else if (**fmt == '%')
-		cs->type = CS_PERCENT;
+		cs->type = '%';
 	else
-		cs->type = CS_NONE;
+		cs->type = '\0';
 	return ;
 }

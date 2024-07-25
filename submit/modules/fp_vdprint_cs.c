@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:54:30 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:58:59 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	fp_vdprint_cs(int fd, t_cs *cs, va_list args)
 
 	len = 0;
 	out_string = NULL;
-	if (cs->type == CS_PERCENT)
+	if (cs->type == '%')
 		return (write(fd, "%", 1));
 	out_string = fp_gen_vdprint_cs(cs, &len, args);
 	if (out_string == NULL)
@@ -44,19 +44,19 @@ char	*fp_gen_vdprint_cs(t_cs *cs, int *len, va_list args)
 	char	*out_string;
 
 	out_string = NULL;
-	if (cs->type == CS_LOWER_D
-		|| cs->type == CS_LOWER_I)
+	if (cs->type == 'd'
+		|| cs->type == 'i')
 		out_string = fp_gen_intstr(cs, len, va_arg(args, int));
-	else if (cs->type == CS_LOWER_S)
+	else if (cs->type == 's')
 		out_string = fp_gen_str(cs, len, va_arg(args, char *));
-	else if (cs->type == CS_LOWER_C)
+	else if (cs->type == 'c')
 		out_string = fp_gen_chrstr(cs, len, (unsigned char)va_arg(args, int));
-	else if (cs->type == CS_LOWER_X
-		|| cs->type == CS_UPPER_X)
+	else if (cs->type == 'x'
+		|| cs->type == 'X')
 		out_string = fp_gen_uintstr(cs, len, va_arg(args, unsigned int), 16);
-	else if (cs->type == CS_LOWER_U)
+	else if (cs->type == 'u')
 		out_string = fp_gen_uintstr(cs, len, va_arg(args, unsigned int), 10);
-	else if (cs->type == CS_LOWER_P)
+	else if (cs->type == 'p')
 		out_string = fp_gen_ptrstr(cs, len, va_arg(args, unsigned long));
 	return (out_string);
 }

@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:08:45 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 16:54:30 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:58:51 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base)
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;
-	fp_to_upper(cs->type == CS_UPPER_X, len, str);
+	fp_to_upper(cs->type == 'X', len, str);
 	return (str);
 }

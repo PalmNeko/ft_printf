@@ -23,7 +23,7 @@ t_cs	*fp_new_t_cs(void)
 	if (cs == NULL)
 		return (NULL);
 	*cs = (t_cs){
-		.type = CS_NONE,
+		.type = '\0',
 		.flag_minus = false,
 		.flag_plus = false,
 		.flag_sharp = false,

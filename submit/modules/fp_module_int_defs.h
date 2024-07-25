@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 15:26:45 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 15:32:44 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:32:21 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,8 @@
 # define FP_SDEFAULT 0
 # define FP_SSIGN 1
 # define FP_SSPACE 2
+
+# define FP_FLAGS "#0- +"
+# define FP_CONVERSION_TYPES "dicsuxXp%"
 
 #endif

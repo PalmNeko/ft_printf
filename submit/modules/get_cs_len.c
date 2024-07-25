@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "fp_module_int_defs.h"
 #include "fp_module.h"
 #include "libft.h"
 
@@ -27,7 +28,7 @@ int	get_cs_len(const char *format)
 	index = 0;
 	if (format[index++] != '%')
 		return (-1);
-	while (is_flags(format[index]))
+	while (ft_includes(format[index], FP_FLAGS))
 		index++;
 	while (ft_isdigit(format[index]))
 		index++;
@@ -35,7 +36,7 @@ int	get_cs_len(const char *format)
 		index++;
 	while (ft_isdigit(format[index]))
 		index++;
-	if (! is_conversion_specifier(format[index++]))
+	if (! ft_includes(format[index++], FP_CONVERSION_TYPES))
 		return (-1);
 	return (index);
 }

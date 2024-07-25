@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:11:12 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 15:38:38 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:34:58 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ t_cs	*generate_cs(const char *format);
 int		get_cs_len(const char *format);
 void	free_t_cs(t_cs *ptr);
 void	fp_rewrite_special_behavior(t_cs *cs);
-bool	is_flags(char c);
-bool	is_conversion_specifier(char c);
-bool	is_set_zero_precision(t_cs *cs);
 char	*fp_gen_str(t_cs *cs, int *len, char *str);
 char	*fp_gen_chrstr(t_cs *cs, int *len, unsigned char uchr);
 char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base);

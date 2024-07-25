@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "fp_module.h"
+#include "fp_module_int_defs.h"
 #include "libft.h"
 #include <stdlib.h>
 #include <errno.h>
@@ -51,7 +52,7 @@ static void	read_flag(t_cs *cs, const char **format)
 {
 	char	flag;
 
-	while (is_flags(**format))
+	while (ft_includes(**format, FP_FLAGS))
 	{
 		flag = **format;
 		if (flag == '#')

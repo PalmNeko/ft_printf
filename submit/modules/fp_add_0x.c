@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:52:41 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 14:57:03 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:54:24 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ char	*fp_add_0x(bool be_add, int	*len, char *str)
 		return (NULL);
 	if (be_add == false
 		|| ft_strcmp("0", str) == 0)
-		return (str);
+		return (ft_strdup(str));
 	added = ft_strjoin("0x", str);
-	free(str);
 	*len += 2;
 	return (added);
 }

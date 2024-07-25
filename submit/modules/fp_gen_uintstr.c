@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:08:45 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:48:27 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:53:25 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ char	*fp_gen_uintstr(t_cs *cs, int *len, unsigned long value, int base)
 		return (NULL);
 	str = tmp;
 	tmp = fp_pad_for_num(zero_field_width, len, str);
+	free(str);
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;
 	tmp = fp_add_0x(cs->flag_sharp, len, str);
+	free(str);
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;

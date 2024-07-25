@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:09:39 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:37:49 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:57:10 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ char	*fp_gen_intstr(t_cs *cs, int *len, int value)
 		return (NULL);
 	str = tmp;
 	tmp = fp_pad_for_num(zero_field_width, len, str);
+	free(str);
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;
 	tmp = fp_add_sign(sign_type, len, str);
+	free(str);
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;

@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 14:14:29 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/23 14:24:54 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:54:39 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*fp_add_sign(int type, int *len, char *str)
 	if (str == NULL)
 		return (NULL);
 	if (type == 0 || str[0] == '-')
-		return (str);
+		return (ft_strdup(str));
 	if (type == 1)
 		add_sign = "+";
 	else if (type == 2)
@@ -38,7 +38,6 @@ char	*fp_add_sign(int type, int *len, char *str)
 	else
 		add_sign = "";
 	joined = ft_strjoin(add_sign, str);
-	free(str);
 	if (joined == NULL)
 		return (NULL);
 	*len += 1;

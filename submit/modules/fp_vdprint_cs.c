@@ -6,12 +6,13 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 15:20:24 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/24 16:47:05 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:11:34 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 #include "fp_module.h"
 
@@ -30,9 +31,11 @@ int	fp_vdprint_cs(int fd, t_cs *cs, va_list args)
 	if (out_string == NULL)
 		return (-1);
 	if (cs->flag_minus)
-		return (fp_print_aligned_left(fd, cs->minimum_field_width, &len, out_string));
+		fp_print_aligned_left(fd, cs->minimum_field_width, &len, out_string);
 	else
-		return (fp_print_aligned_right(fd, cs->minimum_field_width, &len, out_string));
+		fp_print_aligned_right(fd, cs->minimum_field_width, &len, out_string);
+	free(out_string);
+	return (len);
 }
 
 char	*fp_gen_vdprint_cs(t_cs *cs, int *len, va_list args)

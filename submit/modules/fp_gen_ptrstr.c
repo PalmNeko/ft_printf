@@ -6,12 +6,13 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:22:41 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:37:55 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:05:39 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fp_module.h"
 #include "libft.h"
+#include <stdlib.h>
 
 char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value)
 {
@@ -35,6 +36,7 @@ char	*fp_gen_ptrstr(t_cs *cs, int *len, unsigned long value)
 		return (NULL);
 	str = tmp;
 	tmp = fp_add_sign(sign_type, len, str);
+	free(str);
 	if (tmp == NULL)
 		return (NULL);
 	str = tmp;

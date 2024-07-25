@@ -6,7 +6,7 @@
 /*   By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:11:00 by tookuyam          #+#    #+#             */
-/*   Updated: 2024/07/25 14:50:17 by tookuyam         ###   ########.fr       */
+/*   Updated: 2024/07/25 14:59:28 by tookuyam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	*fp_gen_str(t_cs *cs, int *len, char *str)
 	if (cs->is_specified_precision == true)
 	{
 		tmp = fp_cut_string(cs->precision, len, str);
+		free(str);
 		if (tmp == NULL)
 			return (NULL);
 		str = tmp;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tookuyam <tookuyam@student.42tokyo.fr>     +#+  +:+       +#+         #
+#    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/25 16:45:54 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/26 15:32:17 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,29 +22,29 @@ CFLAGS += -g -O0 -Wall -Werror -Wextra -MP -MMD -I Libft -I .
 SRCS += \
 	./ft_printf.c \
 	./ft_vdprintf.c \
-	./modules/fp_gen_intstr.c \
-	./modules/fp_convert_ptr2str.c \
-	./modules/fp_destroy_t_cs.c \
-	./modules/fp_generate_cs.c \
-	./modules/fp_get_cs_len.c \
-	./modules/fp_new_t_cs.c \
-	./modules/fp_print_aligned_left.c \
-	./modules/fp_print_aligned_right.c \
-	./modules/fp_add_sign.c \
-	./modules/fp_pad_for_num.c \
-	./modules/fp_convert_int2str.c \
-	./modules/fp_to_upper.c \
-	./modules/fp_convert_uint2str.c \
-	./modules/fp_convert_uchr2str.c \
-	./modules/fp_vdprint_cs.c \
-	./modules/fp_cut_string.c \
-	./modules/fp_gen_chrstr.c \
-	./modules/fp_gen_ptrstr.c \
-	./modules/fp_get_sign_type.c \
-	./modules/fp_add_0x.c \
-	./modules/fp_rewrite_special_behavior.c \
-	./modules/fp_gen_uintstr.c \
-	./modules/fp_gen_str.c
+	./fp_modules/fp_gen_intstr.c \
+	./fp_modules/fp_convert_ptr2str.c \
+	./fp_modules/fp_destroy_t_cs.c \
+	./fp_modules/fp_generate_cs.c \
+	./fp_modules/fp_get_cs_len.c \
+	./fp_modules/fp_new_t_cs.c \
+	./fp_modules/fp_print_aligned_left.c \
+	./fp_modules/fp_print_aligned_right.c \
+	./fp_modules/fp_add_sign.c \
+	./fp_modules/fp_pad_for_num.c \
+	./fp_modules/fp_convert_int2str.c \
+	./fp_modules/fp_to_upper.c \
+	./fp_modules/fp_convert_uint2str.c \
+	./fp_modules/fp_convert_uchr2str.c \
+	./fp_modules/fp_vdprint_cs.c \
+	./fp_modules/fp_cut_string.c \
+	./fp_modules/fp_gen_chrstr.c \
+	./fp_modules/fp_gen_ptrstr.c \
+	./fp_modules/fp_get_sign_type.c \
+	./fp_modules/fp_add_0x.c \
+	./fp_modules/fp_rewrite_special_behavior.c \
+	./fp_modules/fp_gen_uintstr.c \
+	./fp_modules/fp_gen_str.c
 
 OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)

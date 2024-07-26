@@ -6,17 +6,12 @@
 #    By: tookuyam <tookuyam@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:10:34 by tookuyam          #+#    #+#              #
-#    Updated: 2024/07/26 15:33:06 by tookuyam         ###   ########.fr        #
+#    Updated: 2024/07/26 15:35:57 by tookuyam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # overview
 NAME = libftprintf.a
-
-# libraries
-LIBFT = Libft/libft.a
-
-# compile settings
 CC = cc
 CFLAGS += -g -O0 -Wall -Werror -Wextra -MP -MMD -I Libft -I .
 SRCS += \
@@ -45,29 +40,12 @@ SRCS += \
 	./fp_modules/fp_rewrite_special_behavior.c \
 	./fp_modules/fp_gen_uintstr.c \
 	./fp_modules/fp_gen_str.c
-
 OBJS = $(SRCS:.c=.o)
 DEPENDS = $(SRCS:.c=.d)
+LIBFT = Libft/libft.a
 
 # all
 all: $(NAME)
-
--include $(DEPENDS)
--include $(DEPENDS_BONUS)
-
-# make files
-$(NAME): $(LIBFT) $(OBJS)
-	$(RM) $(NAME)
-	cp $(LIBFT) $(NAME)
-	ar rcs $(NAME) $(filter %.o, $^)
-
-bonus: $(NAME)
-
-$(LIBFT): $(dir $(LIBFT))
-	"$(MAKE)" --directory Libft
-
-$(dir $(LIBFT)):
-	git clone git@github.com:PalmNeko/Libft.git $@
 
 clean:
 	"$(MAKE)" --directory Libft clean
@@ -87,17 +65,27 @@ fclean: clean
 	$(RM) $(NAME_BONUS)
 	$(RM) test
 
+re: fclean all
+
 test: $(NAME) main.c
 	$(CC) $(CFLAGS) main.c -L. -l ftprintf -o $@
 
-check: test
-	./test printf | cat -e > printf.log
-	./test ft_printf | cat -e > ft_printf.log
-	diff printf.log ft_printf.log
+.PHONY: all clean fclean re test 
 
-clone_printfTester:
+-include $(DEPENDS)
+
+$(NAME): $(LIBFT) $(OBJS)
+	$(RM) $(NAME)
+	cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(filter %.o, $^)
+
+bonus: $(NAME)
+
+$(LIBFT): $(dir $(LIBFT))
+	"$(MAKE)" --directory Libft
+
+$(dir $(LIBFT)):
+	git clone git@github.com:PalmNeko/Libft.git $@
+
+printfTester:
 	git clone https://github.com/Tripouille/printfTester.git
-
-re: fclean all
-
-.PHONY: all clean fclean check submit clone_printfTester re
